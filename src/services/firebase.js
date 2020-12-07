@@ -27,7 +27,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 
 //get firebase authentication and access to the firebase database for your app
-//can import multiple things here
+//can export multiple things here
 export const auth = firebase.auth()
 export const db = firebase.firestore()
 export const storage = firebase.storage()
