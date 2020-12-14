@@ -16,11 +16,13 @@
 }
 #app-name {
     padding-left: 10px;
+    font-family: Verdana
 }
 
 #my-acc-label {
     text-align: left;
-    font-size: 25px;
+    font-size: 35px;
+    font-family: "OCR A";
 }
 
 .app-header {
@@ -33,9 +35,6 @@
 .user-info {
   background-color: white;
   padding-left: 30px;
-  #flex-direction: column;
-  #align-items: center;
-  #justify-content: center;
   font-size: 25px;
 }
 
@@ -48,6 +47,7 @@
     display: block;
     padding-top: 15px;
     padding-bottom: 5px;
+    font-family: "OCR A";
 }
 
 .user-info-fields {
@@ -57,6 +57,7 @@
     padding: 6px;
     display: block;
     cursor: default;
+    font-family: "OCR A";
 }
 
 #user-avatar {
@@ -81,11 +82,13 @@
 #tabs {
     padding-top: 150px;
     outline: dotted;
+    font-family: "OCR A";
 }
 
 .tab-list {
     border-bottom: 1px solid #ccc;
     padding-left: 0;
+    font-family: "OCR A";
 }
 
 .tab-list-item {
