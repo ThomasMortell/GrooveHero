@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-var app = new App();
-app.user
+//var app = new App();
+//app.user
 ReactDOM.render(
     <React.StrictMode>
         <App />
