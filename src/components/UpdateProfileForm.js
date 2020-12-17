@@ -3,7 +3,6 @@ import { Modal, Button} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import { db, storage } from '../services/firebase'
 
-
 class UpdateProfileForm extends Component {
     constructor(props) {
         super(props);
@@ -18,6 +17,7 @@ class UpdateProfileForm extends Component {
         };
     }
 
+    //if submit btn was clicked on the form
     handleSubmit = (e) => {
         console.log(e)
         var fName = document.getElementById('fname-form').value;
