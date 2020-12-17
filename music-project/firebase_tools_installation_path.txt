@@ -1,0 +1,1 @@
+C:\Users\msky2\AppData\Roaming\npm\node_modules\firebase-tools
