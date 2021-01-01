@@ -39,7 +39,7 @@ class Box extends Component
     render()
     {
 
-        return (
+        return ( 
             <button onClick={this.onClick} className="box">
                 {this.props.track.text}
             </button>
