@@ -412,6 +412,8 @@ function App()
             </div>
             <div className="EffectClass">
             <button className="box" id='reverb'>Reverb</button>
+            <button className="box" id='quadrafuzz'>Quadrafuzz</button>
+            <button className="box" id='tremolo'>Tremolo</button>
             </div>
             <div className="FunctionsClass">
             {/* Functions */}
