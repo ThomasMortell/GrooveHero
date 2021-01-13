@@ -3,6 +3,7 @@ import './App.css';
 import firebase from './services/firebase.js';
 import Pizzicato from 'pizzicato';
 import PizzicatoRecorder from 'pizzicato-recorder';
+import logo from './Groovehero.jpg';
 
 import Box from './Box';
 
@@ -178,6 +179,21 @@ let rockRhythm3 = new Pizzicato.Sound({
     }
 });
 
+let rockRhythm4 = new Pizzicato.Sound({
+    source: 'file',
+    options: {path: 'https://firebasestorage.googleapis.com/v0/b/groovehero-62b58.appspot.com/o/tracks%2Frock_rhythm4.mp3?alt=media&token=f8261cb2-9899-4270-8f23-9b740d63e893'}
+}, function (error)
+{
+    if (!error)
+    {
+        console.log('[pzSound] Loaded: Sound loaded successfully!');
+    }
+    else
+    {
+        console.log('[pzSound] Error: ' + error);
+    }
+});
+
 let rockSolo1 = new Pizzicato.Sound({
     source: 'file',
     options: {path: 'https://firebasestorage.googleapis.com/v0/b/groovehero-62b58.appspot.com/o/tracks%2Frock_solo1.mp3?alt=media&token=1ed0fc33-3572-4227-9c69-145707696dec'}
@@ -208,8 +224,38 @@ let rockSolo2 = new Pizzicato.Sound({
     }
 });
 
+let rockSolo3 = new Pizzicato.Sound({
+    source: 'file',
+    options: {path: 'https://firebasestorage.googleapis.com/v0/b/groovehero-62b58.appspot.com/o/tracks%2Frock_solo3.mp3?alt=media&token=ed0cf996-5541-4276-9aed-cfcb3895f875'}
+}, function (error)
+{
+    if (!error)
+    {
+        console.log('[pzSound] Loaded: Sound loaded successfully!');
+    }
+    else
+    {
+        console.log('[pzSound] Error: ' + error);
+    }
+});
 
-const assets = [
+let rockSolo4 = new Pizzicato.Sound({
+    source: 'file',
+    options: {path: 'https://firebasestorage.googleapis.com/v0/b/groovehero-62b58.appspot.com/o/tracks%2Frock_solo4.mp3?alt=media&token=9b1c45a0-84a1-44fc-92a6-b680ce8077fd'}
+}, function (error)
+{
+    if (!error)
+    {
+        console.log('[pzSound] Loaded: Sound loaded successfully!');
+    }
+    else
+    {
+        console.log('[pzSound] Error: ' + error);
+    }
+});
+
+
+const BassAssets = [
     {
         name: rockBass1,
         text: "Bass 1",
@@ -231,6 +277,9 @@ const assets = [
         text: "Bass 4",
         sound: rockBass4
     },
+];
+
+const DrumAssets = [ 
     {
         name: rockDrum1,
         text: "Drum 1",
@@ -251,6 +300,9 @@ const assets = [
         text: "Drum 4",
         sound: rockDrum4
     },
+];
+
+const RhythmAssets = [
     {
         name: rockRhythm1,
         text: "Rhythm 1",
@@ -267,6 +319,14 @@ const assets = [
         sound: rockRhythm3
     },
     {
+        name: rockRhythm4,
+        text: "Rhythm 4",
+        sound: rockRhythm4
+    },
+];
+
+const SoloAssets = [
+    {
         name: rockSolo1,
         text: "Solo 1",
         sound: rockSolo1
@@ -275,6 +335,16 @@ const assets = [
         name: rockSolo2,
         text: "Solo 2",
         sound: rockSolo2
+    },
+    {
+        name: rockSolo3,
+        text: "Solo 3",
+        sound: rockSolo3
+    },
+    {
+        name: rockSolo4,
+        text: "Solo 4",
+        sound: rockSolo4
     },
 ];
 
@@ -301,19 +371,55 @@ function App()
     }
 
     return (
-        <div className="App">
-            <h1 className="Text">Testing Pad</h1>
-            {assets.map(track =>
+        <div className="App" >
+            <img src={logo} align="center" height="150px" width="150px"></img>
+            <h2 className="Text">GrooveHero</h2>
+            <fieldset id="field">
+                <div className="BassClass">
+            {/* Render Bass Assets */}
+            {BassAssets.map(track =>
+            {
+                
+                return <Box track={track}/>
+            })}
+            </div>
+            <div className="DrumClass">
+            {/* Render Drum Assets */}
+            {DrumAssets.map(track =>
+            {
+                
+                return <Box track={track}/>
+
+            })}
+            </div>
+            <div className="RythmClass">
+            {/* Render Rhythm Assets */}
+            {RhythmAssets.map(track =>
             {
 
                 return <Box track={track}/>
 
             })}
+            </div>
+            <div className="SoloClass">
+            {/* Render Solo Assets */}
+            {SoloAssets.map(track =>
+            {
 
+                return <Box track={track}/>
+
+            })}
+            </div>
+            <div className="EffectClass">
+            <button className="box" id='reverb'>Reverb</button>
+            </div>
+            <div className="FunctionsClass">
+            {/* Functions */}
             <button className="box" id='stop'>Stop Sound</button>
             <button className="box" id='record' onClick={startRecording}>Start record</button>
             <button className="box" id='save' onClick={saveRecording}>Save record</button>
-            <button className="box" id='reverb'>Reverb</button>
+            </div>
+            </fieldset>
         </div>
     );
 }
