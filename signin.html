@@ -29,16 +29,16 @@
       <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-storage.js"></script>
     </head>
     <body>
-      <div
-        class="wrapper"
-        style="background-image: url('design_files/images/mix.jpg')"
-      >
+      <div class="wrapper" style="background-color: gray">
         <div class="inner">
           <div class="image-holder">
-            <img src="design_files/images/GrooveHeroLogo.jpg" />
+            <img src="design_files/images/logo1.jpg" class="rotate" />
           </div>
           <form action="">
-            <h3>GrooveHero Login</h3>
+            <div class="logo">
+              <img src="design_files/images/logo.jpg" ; />
+              <h3>GrooveHero Login</h3>
+            </div>
             <div class="form-wrapper">
               <input
                 id="email"
@@ -67,10 +67,9 @@
               class="w-full text-center p-t-27 p-b-239"
               style="margin-top: 40%; font-size: 15px"
             >
-              <span class="text-muted"> Forgot </span>
-              <a href="forgotPassword.html" class="text-dark">
-                Username/Password
-              </a>
+              <span class="text-muted"> Mix beats and samples <br /> </span>
+              <span class="text-muted"> Experiment with new styles <br /></span>
+              <span class="text-muted"> Save your tracks </span>
             </div>
             <div
               class="w-full text-center"
@@ -87,7 +86,7 @@
       <script>
         firebase.auth().onAuthStateChanged(function (user) {
           if (user) {
-            window.location.href = "main.html";
+            window.location.href = "index.html";
           }
         });
       </script>
