@@ -21,6 +21,19 @@ class Box extends Component
             mix: 0.7
         });
 
+        var quadrafuzz = new Pizzicato.Effects.Quadrafuzz({
+            lowGain: 0.6,
+            midLowGain: 0.8,
+            midHighGain: 0.5,
+            highGain: 0.6,
+            mix: 1.0
+        });
+
+        var tremolo = new Pizzicato.Effects.Tremolo({
+            speed: 7,
+            depth: 0.8,
+            mix: 0.8
+        });
 
         this.props.track.sound.loop = true;
         this.props.track.sound.play();
@@ -33,6 +46,16 @@ class Box extends Component
         document.getElementById('reverb').addEventListener('click', () =>
         {
             this.props.track.sound.addEffect(reverb);
+        });
+
+        document.getElementById('quadrafuzz').addEventListener('click', () =>
+        {
+            this.props.track.sound.addEffect(quadrafuzz);
+        });
+
+        document.getElementById('tremolo').addEventListener('click', () =>
+        {
+            this.props.track.sound.addEffect(tremolo);
         });
     }
 
